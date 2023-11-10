@@ -22,8 +22,7 @@ public class LearningResourceRepositoryImpl implements LearningResourceRepositor
     @Override
     public List<LearningResource> findAll() {
         try (Session session = sessionFactory.openSession()) {
-            System.out.println(session.createQuery("from LearningResource", LearningResource.class).list());
-            return null;
+            return session.createQuery("from LearningResource", LearningResource.class).list();
         }
     }
 
