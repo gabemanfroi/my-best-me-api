@@ -17,4 +17,10 @@ public interface LearningResourceMapper {
     LearningResourceDTO mapOneEntityToDTO(LearningResource learningResource);
 
     List<LearningResourceDTO> mapMultipleEntitiesToDTOs(List<LearningResource> learningResources);
+
+    @Mapping(source = "id", target = "id")
+    @Mapping(source = "title", target = "title")
+    @Mapping(source = "url", target = "url")
+    @Mapping(source = "description", target = "description")
+    LearningResource mapOneDTOToEntity(LearningResourceDTO learningResourceDTO);
 }
